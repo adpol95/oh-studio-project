@@ -1,0 +1,39 @@
+.welcomeText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .bigText {
+    text-align: center;
+    padding: 0 30px;
+    max-width: 620px;
+
+    @media (max-width: 810px) {
+      font-size: 2rem;
+    }
+
+    @media (min-width: 810.2px) and (max-width: 1200px) {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    @media (min-width: 1200.2px) {
+      font-size: 4rem;
+    }
+  }
+}
+
+.listOfWelcomeText {
+  display: flex;
+  div {
+    margin: 0 .3rem;
+    background: $greyColor;
+    padding: .5rem .8rem;
+    border-radius: 1.3rem;
+  }
+
+  @media (max-width: 810px) {
+    display: none;
+  }
+}
+

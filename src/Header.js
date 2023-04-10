@@ -27,26 +27,27 @@ function Header() {
   const [activeHead, setActiveHead] = useState(headerList);
   const selectHeadSec = (id) => {
     setActiveHead(activeHead.map(el => {
-      return { ...el, active: id === el.id }
+      return {...el, active: id === el.id}
     }));
-    console.log(activeHead)
   }
 
 
   return (
-    <header className={'header'}>
+    <div className={'header'}>
       <div className={'mainSec'}>
         {activeHead.map(el =>
           <div
             onClick={() => selectHeadSec(el.id)} id={el.id} style={{background: el.active ? "white" : ""}}
-            className={'headerMainText'}><Link to={'/' + el.link} className={'links'}
+            className={'headerMainText'}
+            key={el.id}
           >
-            {el.value}
-          </Link>
+            <Link to={'/' + el.link} className={'links'}>
+              {el.value}
+            </Link>
           </div>
         )}
       </div>
-    </header>
+    </div>
   )
 }
 

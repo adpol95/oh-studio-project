@@ -8,9 +8,9 @@ function App() {
   return (
     <div>
       <Header/>
-      <main>
+      <div>
         <Outlet/>
-      </main>
+      </div>
     </div>
   )
 }
