@@ -5,12 +5,13 @@
   right: 0;
   display: flex;
   justify-content: center;
+  z-index: 10;
 }
 
 .mainSec {
   background: rgba(232, 229, 228, 0.5019607843);
   height: 3rem;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -26,6 +27,14 @@
   text-decoration: none;
 }
 
+@keyframes diagonalA {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-15px) translateY(15px);
+  }
+}
 .welcomeText {
   display: flex;
   flex-direction: column;
@@ -66,6 +75,73 @@
   .listOfWelcomeText {
     display: none;
   }
+}
+
+.homeMainContent {
+  margin: 9.2rem 0.5rem;
+  display: grid;
+  column-gap: 1.3rem;
+  row-gap: 2rem;
+}
+.homeMainContent .mainImg img,
+.homeMainContent .mainImg video {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+.homeMainContent .mainImg {
+  border-radius: 3rem;
+  cursor: pointer;
+  position: relative;
+  transition: opacity 2s;
+}
+.homeMainContent .mainImg .whenHover {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  backdrop-filter: blur(14px);
+  border-radius: 1rem;
+  transition: opacity 0.4s;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  padding: 0.4rem 1.2rem;
+  color: white;
+  justify-content: space-between;
+}
+.homeMainContent .imgInsideSign {
+  margin-top: 7px;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 1.5rem;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homeMainContent .imgInsideSign img {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+@media (min-width: 810.2px) {
+  .homeMainContent {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 810px) {
+  .homeMainContent {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mainImg:hover .whenHover {
+  opacity: 1;
+}
+
+.homeMainContent:hover .imgInsideSign {
+  animation: diagonalA 0.3s reverse;
 }
 
 body {
