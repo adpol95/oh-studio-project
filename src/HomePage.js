@@ -1,11 +1,8 @@
-
 import diagonalArrow from './media/logos/top-right.png';
 
 function HomePage() {
-
   return (
-    <div>
-
+    <div className={'homePageMain'}>
       <div className={'welcomeText'}>
         <p className={'bigText'}>
           A brand and product designer working with clients globally
@@ -17,11 +14,11 @@ function HomePage() {
           <div>Design Systems</div>
         </div>
       </div>
-
       <div className={'homeMainContent'}>
         <div className={'mainImg'}>
           <img src="https://framerusercontent.com/images/kfr022WaJ8YJUyZFmdwCB3pXhs.jpg?scale-down-to=1024"
-               alt="Error"/>
+               alt="Error"
+          />
           <div className={'whenHover'}>
             <p> Aire </p>
             <div className={'imgInsideSign'}>
@@ -149,7 +146,7 @@ function HomePage() {
             style={{
               objectFit: 'cover',
               objectPosition: 'center'
-          }}
+            }}
           />
           <div className={'whenHover'}>
             <p> NYCB </p>
@@ -157,6 +154,12 @@ function HomePage() {
               <img src={diagonalArrow} alt="Error"/>
             </div>
           </div>
+        </div>
+      </div>
+      <div className={'downStickFootMain'}>
+        <div className={'allFixedSticky'}>
+          <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20d%3D%22M%206%200%20L%206%2012%20M%200%206%20L%2012%206%20M%201.757%201.758%20L%2010.243%2010.242%20M%201.758%2010.243%20L%2010.242%201.757%22%20fill%3D%22transparent%22%20stroke-width%3D%221.45%22%20stroke%3D%22rgb(255%2C255%2C255)%22%20stroke-miterlimit%3D%2210%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E" alt="cross" width={'12px'}/>
+          <p>Shop</p>
         </div>
       </div>
     </div>

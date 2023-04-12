@@ -1,6 +1,7 @@
 import './App.css';
 import Header from "./Header";
 import {Outlet} from "react-router-dom";
+import Footer from "./Footer";
 
 
 function App() {
@@ -8,9 +9,8 @@ function App() {
   return (
     <div>
       <Header/>
-      <div>
-        <Outlet/>
-      </div>
+      <Outlet/>
+      <Footer/>
     </div>
   )
 }

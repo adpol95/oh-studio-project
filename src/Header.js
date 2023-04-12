@@ -36,15 +36,13 @@ function Header() {
     <div className={'header'}>
       <div className={'mainSec'}>
         {activeHead.map(el =>
-          <div
-            onClick={() => selectHeadSec(el.id)} id={el.id} style={{background: el.active ? "white" : ""}}
-            className={'headerMainText'}
-            key={el.id}
+          <Link to={'/' + el.link}
+                onClick={() => selectHeadSec(el.id)} id={el.id} style={{background: el.active ? "white" : ""}}
+                className={'headerMainText'}
+                key={el.id}
           >
-            <Link to={'/' + el.link} className={'links'}>
-              {el.value}
-            </Link>
-          </div>
+            {el.value}
+          </Link>
         )}
       </div>
     </div>
