@@ -1,7 +1,8 @@
-@import 'Header';
-@import 'home';
-@import 'footer';
-
+@import 'styles/header';
+@import 'styles/home';
+@import 'styles/footer';
+@import 'styles/contact';
+@import 'styles/variables';
 
 body {
   font-family: sans-serif;
@@ -9,8 +10,14 @@ body {
   padding: 2rem;
   margin-top: 9.5rem;
 
-  @media (min-width: 1420px) {
+  @media (min-width: $desktopWide) {
     padding-left: 18rem;
     padding-right: 18rem;
   }
+}
+
+.bodyMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

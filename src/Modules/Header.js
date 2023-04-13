@@ -1,25 +1,19 @@
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import {useState} from "react";
 
 function Header() {
+  const location = useLocation();
+  console.log(location.pathname)
   const headerList = [
     {
       id: 1 + '',
       value: 'Home',
       link: '',
-      active: true
     },
     {
       id: 2 + '',
-      value: 'Profile',
-      link: 'profile',
-      active: false
-    },
-    {
-      id: 3 + '',
       value: 'Contact',
       link: 'contact',
-      active: false
     }
   ]
 
@@ -36,7 +30,11 @@ function Header() {
       <div className={'mainSec'}>
         {activeHead.map(el =>
           <Link to={'/' + el.link}
-                onClick={() => selectHeadSec(el.id)} id={el.id} style={{background: el.active ? "white" : ""}}
+                onClick={() => selectHeadSec(el.id)} id={el.id}
+                style={{
+                  background: location.pathname.replace(/./, '') === el.link
+                    ? "white" : ""
+                }}
                 className={'headerMainText'}
                 key={el.id}
           >

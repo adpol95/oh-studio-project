@@ -1,14 +1,13 @@
 import './App.css';
-import Header from "./Header";
+import Header from "./Modules/Header";
+import Footer from "./Modules/Footer";
 import {Outlet} from "react-router-dom";
-import Footer from "./Footer";
-
 
 
 function App() {
 
   return (
-    <div>
+    <div className={'bodyMain'}>
       <Header/>
       <Outlet/>
       <Footer/>
