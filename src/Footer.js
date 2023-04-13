@@ -1,7 +1,14 @@
+import AOS from 'aos';
+import "aos/dist/aos.css";
+
 function Footer() {
+  AOS.refreshHard();
+  AOS.init();
+
   return (
     <div className={'footerMain'}>
-      <div className={'goodByeText'}>
+      <div className={'goodByeText'}
+           data-aos='fade-up'>
         <p className={'firstText'}>
           Let's work together.
         </p>

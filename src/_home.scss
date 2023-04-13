@@ -1,14 +1,11 @@
-@import 'header';
-
-
-.homePageMain {
-  animation: slideUp 1s ease-in reverse backwards;
-}
+@import "animations";
+@import "variables";
 
 .welcomeText {
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: slideUp 1s ease-in-out 1;
 
   .bigText {
     text-align: center;
@@ -16,17 +13,17 @@
     max-width: 620px;
     margin-top: 6.5rem;
 
-    @media (max-width: 810px) {
+    @media (max-width: $phoneWide) {
       font-size: 2rem;
     }
 
-    @media (min-width: 810.2px) and (max-width: 1200px) {
+    @media (min-width: $phoneWide + .2px) and (max-width: $tablesWide) {
       font-size: 3rem;
       text-align: center;
       margin-top: 4rem;
     }
 
-    @media (min-width: 1200.2px) {
+    @media (min-width: $tablesWide + .2px) {
       font-size: 4rem;
     }
   }
@@ -42,7 +39,7 @@
     border-radius: 1.3rem;
   }
 
-  @media (max-width: 810px) {
+  @media (max-width: $phoneWide) {
     display: none;
   }
 }
@@ -50,8 +47,9 @@
 .homeMainContent {
   display: grid;
   column-gap: 1.3rem;
-  row-gap: 2rem;
+  row-gap: 2.8rem;
   justify-content: center;
+  animation: slideUp 1.2s ease-in-out 1;
 
   .mainImg {
     text-align: center;
@@ -95,6 +93,15 @@
     &:hover .imgInsideSign {
       transform: translateY(-15px) translateX(15px);
     }
+
+    @media (max-width: $phoneWide) {
+      all: unset;
+      text-align: left;
+      margin-bottom: 5rem;
+      .imgInsideSign {
+        display: none;
+      }
+    }
   }
 
   .imgInsideSign {
@@ -115,16 +122,16 @@
     }
   }
 
-  @media (min-width: 810.2px) {
+  @media (min-width: $phoneWide + .2px) {
     grid-template-columns: 1fr 1fr;
     margin: 8.4rem 0.5rem;
   }
 
-  @media (min-width: 1420px) {
+  @media (min-width: $tablesWide) {
     margin: 14rem 0.5rem;
   }
 
-  @media (max-width: 810px) {
+  @media (max-width: $phoneWide) {
     grid-template-columns: 1fr;
     margin: 10rem 0.5rem;
   }
@@ -135,8 +142,10 @@
   top: unset;
   bottom: 2rem;
   cursor: pointer;
+  animation: slideUp 1.5s ease-in-out 1;
 
   .allFixedSticky {
+    transition: opacity 1s;
     background: black;
     color: white;
     display: flex;
